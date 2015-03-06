@@ -1,7 +1,3 @@
-if (window.top) {
-  console.error('Should be loaded in Front\'s iframe');
-}
-
 var conversation;
 
 function unassign() {
