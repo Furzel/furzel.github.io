@@ -1,4 +1,14 @@
-var conversation;
+var conversation = null;
+
+Front.init('#front');
+
+Front.on('conversation', function (data) {
+  console.log('Conversation', data.conversation);
+  console.log('Contact', data.contact);
+  console.log('Message', data.message);
+  console.log('OtherMessages', data.otherMessages);
+  conversation = data.conversation;
+});
 
 function unassign() {
   Front.unassign(conversation);
@@ -71,11 +81,3 @@ function fetchInboxes() {
     console.log(inboxes);
   });
 }
-
-Front.on('conversation', function (data) {
-  console.log('Conversation', data.conversation);
-  console.log('Contact', data.contact);
-  console.log('Message', data.message);
-  console.log('OtherMessages', data.otherMessages);
-  conversation = data.conversation;
-});
