@@ -1,0 +1,9 @@
+body {
+  background-image: url("../img/apprentice_bg.jpg");
+}
+
+p {
+  color: black;
+  font-weight: bold;
+  font-size: larger;
+}

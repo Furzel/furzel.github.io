@@ -1,0 +1,7 @@
+dd2/build/react.js
+dd2/build/react-dom.js
+dd2/build/react-dom-server.js
+dd2/build/react-dom-server.min.js
+dd2/build/react-with-addons.js
+dd2/build/react-with-addons.min.js
+dd2/node_modules*
