@@ -11,25 +11,27 @@ var SerenityCalculator = React.createClass({
 
   render: function () {
     return React.createElement(Calculator, { title: 'Serenity aura',
-      inputs: [{ img: 'img/defense_power.png', label: 'Defense power', updateCallback: this.defensePowerUpdate, value: this.state.defensePower }, { img: 'img/serenity_weapon.png', label: 'Purge evil power', updateCallback: this.purgeEvilPowerUpdate, value: this.state.purgeEvilPower }],
+      inputs: [{ img: 'img/defense_power.png', label: 'Defense power', updateCallback: this.defensePowerUpdate }, { img: 'img/serenity_weapon.png', label: 'Purge evil power', updateCallback: this.purgeEvilPowerUpdate }],
       result: { img: 'img/serenity.png', label: 'Serenity explosion damage', value: this.state.result },
       resetHandler: this.reset });
   },
 
   defensePowerUpdate: function (value) {
+    if (!value) return;
+
     this.setState({ defensePower: value });
     setTimeout(this.computeResult, 0);
   },
 
   purgeEvilPowerUpdate: function (value) {
+    if (!value) return;
+
     this.setState({ purgeEvilPower: value });
     setTimeout(this.computeResult, 0);
   },
 
   computeResult: function () {
     if (!this.state.defensePower || !this.state.purgeEvilPower) return;
-
-    console.log('defensePower', this.state.defensePower, 'purgeEvil', this.state.purgeEvilPower);
 
     var auraPower = this.state.defensePower * this.state.purgeEvilPower / 100;
 

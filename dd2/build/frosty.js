@@ -29,8 +29,6 @@ var FrostyCalculator = React.createClass({
   computeResult: function () {
     if (!this.state.defensePower || !this.state.frostyPower) return;
 
-    console.log('defensePower', this.state.defensePower, 'frostyPower', this.state.frostyPower);
-
     var auraPower = this.state.defensePower * this.state.frostyPower / 100;
 
     this.setState({ result: auraPower });
